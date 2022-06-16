@@ -1,133 +1,162 @@
 
 <html lang="en-US">
-<head>
-<title></title>
+	<head>
+	<title>Hollymocks | Free Mockups</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i&display=swap" as="style">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i&display=swap">
+	<style>
+		* {
+			font-family: 'Raleway', sans-serif;
+		}
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
-<style>
-
-body {
-	color: #333;
-}
-
-.box {
-	border-radius: 3px;
-	background: rgba(101, 101, 101, 0.9); margin: auto; padding: 12px;
-}
-
-.lightbox {
-	zoom: 1.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.8);
-    text-align: center;
-    margin: auto;
-    background-image: url(hollymocks.png);
-    background-size: 35% auto;
-    background-position: top;
-    background-repeat: no-repeat;
-}
-
-div.horizontal {
-	display: flex;
-	justify-content: center;
-	height: 100%;
-}
-
-div.vertical {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 100%;
-}
-
-::-webkit-input-placeholder {
-   color: #955;
-   text-align: center;
-}
-
-::-moz-placeholder {  
-   color: #955;
-   text-align: center;
-}
-
-:-ms-input-placeholder {  
-   color: #955;
-   text-align: center;
-}
-
-</style>
-
-<body>
+		body {
+			color: #333;
+		}
 	
-	<div id="loginbox" class="lightbox" >
-		<div class="horizontal">
-			<div class="vertical">
-				<div class="box">				
-					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="Enter password..." /> <br />
-					<button id="loginbutton" type="button">Unlock Free Mockups!</button>
-					<p id="wrongPassword" style="display: none">wrong password</p>
+		.box {
+			align-items: center;
+			background: rgba(101, 101, 101, 0.9);
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			margin: auto;
+			padding: 40px;
+		}
+
+		#loginbutton {
+			background: white;
+			border-radius: 12.5px;
+			border: 1px solid #955E49;
+			color: black;
+			display: inline-block;
+			font-family: Raleway, sans-serif;
+			font-size: 16px;
+			font-weight: 600;
+			letter-spacing: 2.4px;
+			line-height: 20px;
+			margin-bottom: 10px;
+			padding: 14px 30px;
+			text-align: center;
+			text-transform: uppercase;
+			width: 100%;
+		}
+
+		#loginbutton:hover {
+			box-shadow: 0px 0px 10px;
+			cursor: pointer;
+		}
+
+		input {
+			background: transparent;
+			border-radius: 12.5px;
+			border: 1px solid white;
+			color: white;
+			font-family: Raleway, sans-serif;
+			font-size: 18px;
+			font-weight: 400;
+			height: 50px;
+			letter-spacing: 0.45px;
+			line-height: 20px;
+			padding: 14px 30px;
+			text-align: center;
+			text-transform: none;
+			width: 100%;
+		}
+	
+		.lightbox {
+			background: rgba(10, 10, 10, 0.8);
+			height: 100%;
+			left: 0;
+			margin: auto;
+			position: fixed;
+			text-align: center;
+			top: 0;
+			width: 100%;
+		}
+	
+		div.horizontal {
+			display: flex;
+			height: 100%;
+			justify-content: center;
+		}
+	
+		div.vertical {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+		}
+	
+		::-webkit-input-placeholder {
+			color: white;
+			text-align: center;
+		}
+	
+		::-moz-placeholder {
+			color: white;
+			text-align: center;
+		}
+	
+		:-ms-input-placeholder {
+			color: white;
+			text-align: center;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="loginbox" class="lightbox" >
+			<div class="horizontal">
+				<div class="vertical">
+					<div class="box">
+						<a href="http://www.hollymocks.com" target="_blank"><img style="margin-bottom: 40px;" src="hollymocks.png" width="200" alt="Hollymocks Logo"/></a>
+						<input id="password" type="password" placeholder="Enter password..." /> <br />
+						<button id="loginbutton" type="button">Unlock Free Mockups!</button>
+						<p id="wrongPassword" style="display: none">Wrong password</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="sha.min.js"></script>
+		<script type="text/javascript">
+		"use strict";
 
-
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	 
-
-	 <script type="text/javascript" src="sha.min.js"></script>
-
-	<script type="text/javascript">
-	"use strict";
-
-
-	function loadPage(pwd) {
-		
-		var hash = pwd;
-		hash = Sha1.hash(pwd);
-		var url= hash + "/index.html";
+		function loadPage(pwd) {
 			
-		$.ajax({
-			url : url,
-			dataType : "html",
-			success : function(data) {
+			var hash = pwd;
+			hash = Sha1.hash(pwd);
+			var url= hash + "/index.html";
+				
+			$.ajax({
+				url : url,
+				dataType : "html",
+				success : function(data) {
 
-				window.location= url;
+					window.location= url;
 
-			},
-			error : function(xhr, ajaxOptions, thrownError) {
-			
+				},
+				error : function(xhr, ajaxOptions, thrownError) {
+					parent.location.hash = hash;
+					$("#password").attr("placeholder","Wrong password");
+					$("#password").val("");
+				}
+			});
+		}
 
-				parent.location.hash= hash;
+		$("#loginbutton").on("click", function() {
+			loadPage($("#password").val());
+		});
 
-				//$("#wrongPassword").show();
-				$("#password").attr("placeholder","wrong password");
-				$("#password").val("");
+		$("#password").keypress(function(e) {
+			if (e.which == 13) {
+				loadPage($("#password").val());
 			}
 		});
-	}
 
-	 
-	$("#loginbutton").on("click", function() {
-		loadPage($("#password").val());
-	});
-	$("#password").keypress(function(e) {
-		if (e.which == 13) {
-			
-			loadPage($("#password").val());
-		}
-	});
-	$("#password").focus();
-		
-	</script>
-
-</body>
+		$("#password").focus();
+		</script>
+	</body>
 </html>
