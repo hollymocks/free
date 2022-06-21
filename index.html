@@ -7,18 +7,40 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i&display=swap" as="style">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i&display=swap">
+	<script>
+		(function (w, d, t, h, s, n) {
+			w.FlodeskObject = n;
+			var fn = function () {
+				(w[n].q = w[n].q || []).push(arguments);
+			};
+			w[n] = w[n] || fn;
+			var f = d.getElementsByTagName(t)[0];
+			var v = '?v=' + Math.floor(new Date().getTime() / (120 * 1000)) * 60;
+			var sm = d.createElement(t);
+			sm.async = true;
+			sm.type = 'module';
+			sm.src = h + s + '.mjs' + v;
+			f.parentNode.insertBefore(sm, f);
+			var sn = d.createElement(t);
+			sn.async = true;
+			sn.noModule = true;
+			sn.src = h + s + '.js' + v;
+			f.parentNode.insertBefore(sn, f);
+		})(window, document, 'script', 'https://assets.flodesk.com', '/universal', 'fd');
+	</script>
 	<style>
 		* {
 			font-family: 'Raleway', sans-serif;
 		}
 
 		body {
-			color: #333;
+			color: black;
+			margin: 0;
 		}
 	
 		.box {
 			align-items: center;
-			background: rgba(101, 101, 101, 0.9);
+			background: black;
 			border-radius: 10px;
 			display: flex;
 			flex-direction: column;
@@ -69,12 +91,12 @@
 		.lightbox {
 			background: rgba(10, 10, 10, 0.8);
 			height: 100%;
-			left: 0;
-			margin: auto;
-			position: fixed;
 			text-align: center;
-			top: 0;
 			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
 		}
 	
 		div.horizontal {
@@ -108,7 +130,7 @@
 	</head>
 	<body>
 		<div id="loginbox" class="lightbox" >
-			<div class="horizontal">
+			<!-- <div class="horizontal">
 				<div class="vertical">
 					<div class="box">
 						<a href="http://www.hollymocks.com" target="_blank"><img style="margin-bottom: 40px;" src="hollymocks.png" width="200" alt="Hollymocks Logo"/></a>
@@ -117,7 +139,14 @@
 						<p id="wrongPassword" style="display: none">Wrong password</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
+			<div id="fd-form-62b20ba25b2d08a9b95d9902"></div>
+			<script>
+				window.fd('form', {
+					formId: '62b20ba25b2d08a9b95d9902',
+					containerEl: '#fd-form-62b20ba25b2d08a9b95d9902'
+				});
+			</script>
 		</div>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script type="text/javascript" src="sha.min.js"></script>
